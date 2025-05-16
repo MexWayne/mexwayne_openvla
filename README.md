@@ -580,6 +580,49 @@ python experiments/robot/libero/run_libero_eval.py \
   --center_crop True
 ```
 
+the evaluation of the libero usually need 32g GPU ram, so if you only have small ram-size GPU, like TRX4070ti, you can add the item "--load_in_8bit True"
+so the upper command can be 
+
+```bash
+# Launch LIBERO-Spatial evals
+python experiments/robot/libero/run_libero_eval.py \
+  --model_family openvla \
+  --pretrained_checkpoint openvla/openvla-7b-finetuned-libero-spatial \
+  --task_suite_name libero_spatial \
+  --center_crop True
+  --load_in_8bit True
+
+# Launch LIBERO-Object evals
+python experiments/robot/libero/run_libero_eval.py \
+  --model_family openvla \
+  --pretrained_checkpoint openvla/openvla-7b-finetuned-libero-object \
+  --task_suite_name libero_object \
+  --center_crop True
+  --load_in_8bit True
+
+# Launch LIBERO-Goal evals
+python experiments/robot/libero/run_libero_eval.py \
+  --model_family openvla \
+  --pretrained_checkpoint openvla/openvla-7b-finetuned-libero-goal \
+  --task_suite_name libero_goal \
+  --center_crop True
+  --load_in_8bit True
+
+# Launch LIBERO-10 (LIBERO-Long) evals
+python experiments/robot/libero/run_libero_eval.py \
+  --model_family openvla \
+  --pretrained_checkpoint openvla/openvla-7b-finetuned-libero-10 \
+  --task_suite_name libero_10 \
+  --center_crop True
+  --load_in_8bit True
+```
+
+
+
+
+
+
+
 Notes:
 * The evaluation script will run 500 trials by default (10 tasks x 50 episodes each). You can modify the number of
   trials per task by setting `--num_trials_per_task`. You can also change the random seed via `--seed`.
