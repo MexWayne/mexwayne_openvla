@@ -582,6 +582,12 @@ python experiments/robot/libero/run_libero_eval.py \
 
 the evaluation of the libero usually need 32g GPU ram, so if you only have small ram-size GPU, like TRX4070ti, you can add the item "--load_in_8bit True"
 so the upper command can be 
+before run the command, you should install the transformer, datasets accelerate, or it will throw out the errors
+```bash
+pip install transformers datasets accelerate
+```
+
+
 
 ```bash
 # Launch LIBERO-Spatial evals
