@@ -584,6 +584,7 @@ the evaluation of the libero usually need 32g GPU ram, so if you only have small
 so the upper command can be 
 before run the command, you should install the transformer, datasets accelerate, or it will throw out the errors
 ```bash
+pip install draccus
 pip install bitsandbytes 
 pip install transformers==4.38.2 accelerate==0.27.2
 ```
