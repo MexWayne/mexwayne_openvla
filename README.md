@@ -584,9 +584,10 @@ the evaluation of the libero usually need 32g GPU ram, so if you only have small
 so the upper command can be 
 before run the command, you should install the transformer, datasets accelerate, or it will throw out the errors
 ```bash
-pip install transformers datasets accelerate
+pip install bitsandbytes 
+pip install transformers==4.38.2 accelerate==0.27.2
 ```
-
+Note: you must install the package as I prompt, or it will show endless error that cause by the unmatched packages, even the chatgpt can not cope with.
 
 
 ```bash
