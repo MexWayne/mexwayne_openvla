@@ -1,0 +1,14 @@
+torchrun --standalone --nnodes 1 --nproc-per-node 1 vla-scripts/finetune.py \
+  --vla_path "openvla/openvla-7b" \
+  --data_root_dir /data \
+  --dataset_name bridge_orig \
+  --run_root_dir lora_checkpoint \
+  --adapter_tmp_dir lora_adapter \
+  --lora_rank 32 \
+  --batch_size 2 \
+  --grad_accumulation_steps 1 \
+  --learning_rate 5e-4 \
+  --image_aug True \
+  --wandb_project lora_test \
+  --wandb_entity imvision \
+  --save_steps 1000 

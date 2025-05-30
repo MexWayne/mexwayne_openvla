@@ -1,0 +1,13 @@
+torchrun --standalone --nnodes 1 --nproc-per-node 1 vla-scripts/train.py \
+  --pretrained_checkpoint /home/aiisp/imv_embd_ai/openvla/openvla-7b-prismatic/checkpoints/step-295000-epoch-40-loss=0.2200.pt \
+  --vla.type prism-dinosiglip-224px+mx-bridge \
+  --data_root_dir /data \
+  --run_root_dir  /home/aiisp/imv_embd_ai/openvla/finetune_checkpoint \
+  --run_id 777 \
+  --image_aug True \
+  --wandb_project finetune_test \
+  --wandb_entity imvision \
+  --save_interval 1000 \
+  --is_resume False \
+  --vla.expected_world_size 1\
+  --vla.per_device_batch_size 1
