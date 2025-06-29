@@ -16,14 +16,9 @@ def as_gif(images, path="temp.gif"):
 if __name__ == "__main__":
     
     # will load tall the tfrecord in one time
-
-    # this way is OK
-    #ds = tfds.load("droid_100", data_dir="/data/franka_droid/", split="train")
-
     # this way is OK too
     builder = tfds.builder_from_directory("/data/franka_droid/droid_100/1.0.0")
     ds = builder.as_dataset(split="train")
-    print(builder.info.name)  # the droid 100 in put in the r2d2_faceblur that is why the tfds.load is ok
 
     images = []
     print("Total episodes:", sum(1 for _ in ds))
